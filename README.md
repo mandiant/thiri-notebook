@@ -89,7 +89,7 @@ python3 -m venv thiri-env
 pip3 install -r REQUIREMENTS.txt
 jupyter contrib nbextension install --user
 ```
-For non-Windows systems, please also install the extra libraries needed for PyEnchant as documented here: https://pyenchant.github.io/pyenchant/install.html
+For non-Windows systems, please also install the extra libraries needed for PyEnchant as documented here: https://pyenchant.github.io/pyenchant/install.html (Apple Silicon users may also want to read [this thread for PyEnchant support](https://github.com/pyenchant/pyenchant/issues/265#issuecomment-998965819).)
 
 ### Launch Jupyter
 ```jupyter notebook --autoreload```
