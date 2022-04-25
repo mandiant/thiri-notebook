@@ -16,7 +16,7 @@ Use the following guidelines for new templates:
 	Template Name		[rule_format]_[rule_type] e.g. yara or snort_http
 	Rule Variables		Use format strings with {variable_names}. These can be filled out later like my_template.format(name='name', description='my rule')
 	Comments			Add a # comment above each template with the Variable names accepted by your rule.
-	Sub-Templatse		Some formats (e.g. HXIOC) may require more complex templates. 
+	Sub-Templates		Some formats (e.g. HXIOC) may require more complex templates. 
 						Check hxioc, hxioc_processevent, and hxioc_group for an example of how these can be assembled.
 """
 from datetime import datetime
