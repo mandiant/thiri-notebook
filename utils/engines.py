@@ -661,7 +661,8 @@ class SwearWord(Engine):
 
         # Put the rule together and return it 
         name = f'M_Methodology_{self.name}_{options["Anchor"][0].get_term()}_{search_term[0].get_term()}_{options["Encoder"]}'
-        logic = f'strings:\n\t\t$filetype= {options["Anchor"][0].get_regex_raw_hex(options["Encoder"])}\n\t\t{regex}\n\t\t{exceptions}\n\tcondition:\n\t\t{condition}'
+        ## the [1:-1] will trim off the |'s, so we can use Yara hex syntax of {}. Issue #3
+        logic = f'strings:\n\t\t$filetype= {{{options["Anchor"][0].get_regex_raw_hex(options["Encoder"])[1:-1]}}}\n\t\t{regex}\n\t\t{exceptions}\n\tcondition:\n\t\t{condition}'
 
         return name, rule_templates.yara.format(name=name, description=', '.join([x.get_term() for x in search_term]), logic=logic)
 
